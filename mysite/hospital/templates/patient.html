@@ -1,0 +1,46 @@
+{% extends 'hospitalheader.html' %}
+{% load static %}
+
+{% block content %}
+<center>
+    <h1>DATA TABLE</h1>
+    <a href="{% url 'PPregister' %}" class="btn btn-sucess" type="button" style="background:darkorange;">Add Patient</a><br><br>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>Email</th>
+                <th>password</th>
+                <th>mobile</th>
+                <th>Gender</th>
+                <th>Description</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        {% for n in ddd %}
+        <tbody>
+            <tr>
+                <td>{{n.id}}</td>
+                <td>{{n.f_name}}</td>
+                <td>{{n.l_name}}</td>
+                <td>{{n.email}}</td>
+                <td>{{n.password}}</td>
+                <td>{{n.mobile}}</td>
+                <td>{{n.gender}}</td>
+                <td>{{n.description}}</td>
+                <td><a href="{% url 'edit' n.id %}" class="btn btn-sucess" type="button">Edit</a>|<a href="/delete/{{n.id}}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+{% endblock %}

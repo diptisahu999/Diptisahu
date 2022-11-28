@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'register/css/style.css  ' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('{% static 'register/images/bg-registration-form-3.jpg' %}');">
+			<div class="inner">
+				<form action="" method="POST">
+					{% csrf_token %}
+
+					
+					<h3>Registration Form</h3>
+					
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">First Name:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-account-o"></i>
+								<input type="text" name='f_name' class="form-control">
+							</div>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Last Name:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-account-o"></i>
+								<input type="text" name='l_name' class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">Email:</label>
+							<div class="form-holder">
+								<i style="font-style: normal; font-size: 15px;">@</i>
+								<input type="email" name='email' class="form-control" placeholder="********">
+							</div>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Mobile No:</label>
+							<div class="form-holder">
+								<input type="number" name='mobile' class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">Password:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-lock-outline"></i>
+								<input type="password" name='password' class="form-control" placeholder="********">
+							</div>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Re Password:</label>
+							<div class="form-holder">
+								<i class="zmdi zmdi-lock-outline"></i>
+								<input type="repassword" name='repassword' class="form-control" placeholder="********">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">Description:</label>
+							<div class="form-holder">
+								<input type="description" name='description' class="form-control">
+							</div>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Gender:</label>
+							<input type="radio", name="gender" value="male">male
+							<input type="radio", name="gender" value="female">Female
+						</div>
+					</div>
+					<div class="form-end">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="button-holder">
+							<button>Register Now</button>
+						</div>
+					</div>		
+				</form>
+				<!-- {% if messages %}
+				 {% for message in messages %}    
+				 	<span {% if message.tags %} class="{{message.tags}}"  {% endif %}><h2 style="margin-left:38%;">{{message}}</h2></span>
+				  {% endfor %}
+				{% endif %} -->
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

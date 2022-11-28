@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v3 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css ' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('{% static 'images/bg-registration-form-3.jpg' %}');">
+			<div class="inner">
+                <div>
+                    <p><b><h3>{{mssg}}</h3></b></p>
+				<form action="{% url 'potp' %}" method="POST">
+					{% csrf_token %}
+                    <div class="d-flex justify-content-center align-items-center container">
+                        <div class="card py-5 px-3">
+                            <h2 class="m-2">Mobile phone verification</h2><br>
+                            <span class="mobile-text">Enter the code we just send on your mobile phone <b class="text-danger">+91 86684833</b></span><br><br>
+                            <div class="d-flex flex-row mt-5">
+                                <input type="text" name="uotp" class="form-control" autofocus=""></div><br>
+                                    <div class="button-holder">
+                                        <button style="margin-right:-43% ;">Verify OTP</button>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
